@@ -1,0 +1,276 @@
+
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+@import "node_modules/bootstrap/scss/mixins";
+
+@import "node_modules/bootstrap/scss/functions";
+
+@import "node_modules/bootstrap/scss/_variables.scss";
+// Variables
+@import 'variables';
+@import 'lumen';
+
+@import '~jquery-ui/themes/base/all.css';
+
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css');
+
+
+.navbar-laravel {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+  color: #fff;
+} 
+
+#cart
+{
+  font-size: 35px !important;
+}
+
+.btn-yellow
+{
+   background-color: #F5AB35 !important;
+}
+
+.btn-red
+{
+  background-color: #F22613 !important;
+}
+
+.btn-blue
+{
+  background-color: #1F3A93 !important;
+}
+
+
+.list-group-item
+{
+  border: 1px solid #aaa !important; 
+  color: #000; 
+  
+}
+
+@include media-breakpoint-only(xs) 
+{  
+  body
+  {
+      font-size: 1em !important;
+  }
+
+  #specifika
+  {
+    display: none !important;
+  }
+  .active
+  { 
+    border-right:3px dotted #fff;
+  }
+
+  #search-container
+  {
+    padding: 10%;
+  } 
+  #card-label
+  {
+    position:absolute;
+    margin-left: -2vw;
+    width: 25vw;
+  }
+  #table-label
+  {
+    margin-left: -4.3vw;
+    width: 18vw;
+  } 
+
+  #products #sasia
+  {  
+  width: 10.2vw !important;
+  }
+  #card-view #sasia
+  {  
+  width: 11vw !important;
+  }
+  #table #sasia  
+  {  
+  width: 11vw  !important;
+  }
+  #value
+  {
+    width: 17vw !important;
+  }
+  #quantity
+  {
+    width: 17vw !important;
+  }
+}
+@include media-breakpoint-only(sm) 
+{ 
+  #specifika
+  {
+    display: none !important;
+  }
+  #search-container
+  {
+    padding: 10%;
+  } 
+  .active
+  {
+    border-right:3px dotted #fff;
+  }
+  #card-label
+  {
+    position:absolute;
+    margin-left: -1.4vw;
+    width: 20vw;
+  }
+  #products #sasia
+  {  
+  width: 8vw !important;
+  }
+  #card-view #sasia
+  {  
+  width: 8vw !important;
+  }
+  #products #sasia-field  
+  {  
+  width: 25vw  !important;
+  }
+  #table #sasia-field  
+  {  
+    width: 13vw  !important;
+  }
+  #value
+  {
+    width: 12vw !important;
+  }
+  #quantity
+  {
+    width: 12vw !important;
+  }
+  #table-label
+  {
+    margin-left: -4vw;
+    width: 14vw;
+  } 
+}
+@include media-breakpoint-only(md)
+{  
+  #specifika
+  {
+    display: none !important;
+  }
+  .active
+  {
+    border-right:3px dotted #fff;
+  }
+  #card-label
+  {
+    position:absolute;
+    margin-left: -1vw;
+    width: 12vw;
+  }
+  #products #sasia
+  {  
+  width: 6.2vw !important;
+  }
+  #card-view #sasia
+  {  
+  width: 6.2vw !important;
+  }
+  #products #sasia-field  
+  {  
+  width: 19vw  !important;
+  }
+  #table #sasia-field  
+  {  
+  width: 11vw  !important;
+  }
+  #value
+  {
+    width: 10vw !important;
+  }
+  #quantity
+  {
+    width: 10vw !important;
+  }
+  #table-label
+  {
+    margin-left: -2.3vw;
+    width: 9vw;
+  } 
+}
+@include media-breakpoint-only(lg) 
+{
+  .active
+  {
+    border-bottom:3px dotted #fff;
+  } 
+
+  #card-label
+  {
+    position:absolute;
+    margin-left: -1vw;
+    width: 11vw;
+  }
+  #products #sasia
+  {  
+  width: 5vw !important;
+  }
+  #card-view #sasia
+  {  
+  width: 5vw !important;
+  }
+  #products #sasia-field  
+  {  
+  width: 15vw  !important;
+  }
+  #table #sasia-field  
+  {  
+  width: 7vw  !important;
+  }
+  #value
+  {
+    width: 10vw !important;
+  }
+  #quantity
+  {
+    width: 10vw !important;
+  }
+  #table-label
+  {
+    margin-left: -1.9vw;
+    width: 7vw;
+  }
+}
+@include media-breakpoint-only(xl) 
+{ 
+  .active
+  {
+    border-bottom:3px dotted #fff;
+  } 
+  #card-label
+  {
+    position:absolute;
+    margin-left: -1vw;
+    width: 10vw;
+  }
+  #products #sasia
+  {  
+  width: 4vw !important;
+  }
+  #card-view #sasia
+  {  
+  width: 4vw !important;
+  }
+  #products #sasia-field  
+  {  
+  width: 12vw  !important;
+  }
+  #table #sasia-field  
+  {  
+  width: 6vw  !important;
+  }
+  #table-label
+  {
+    margin-left: -1.5vw;
+    width: 6vw;
+  }
+}
