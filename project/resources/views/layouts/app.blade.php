@@ -15,7 +15,12 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
-
+     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"
+   integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+   crossorigin=""/>
+   <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"
+   integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
+   crossorigin=""></script>
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
@@ -25,7 +30,7 @@
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-laravel mx-auto">
                 <a class="navbar-brand" href="{{ url('/') }}">
                    <img src="{{ asset('images/logo.png') }}" class="img-responsive ">
-                  
+
                 </a>
                 @guest
                 @else
@@ -41,7 +46,7 @@
                             <label for="vlera" class="  text-md-right mr-1 d-sm-none d-md-inline">Vlera</label>
                             <label for="vlera" class="  text-md-right mr-1 d-sm-inline d-md-none">V:</label>
                             <input class="form-control d-inline" type="text"  value="{{number_format(App\Cart::getTotalPrice(auth()->user()->id),2)}} €" name="value" id="value" readonly placeholder="Vlera" />
-                         
+
                 @endguest
             </div>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -53,8 +58,8 @@
                     @guest
                     @else
                     <ul class="navbar-nav m-auto">
-                    
-                            
+
+
                             @if(Auth::user()->admin == 1)
                             <li class="nav-item ">
                                 <a class="nav-link hvr-underline-from-left @yield('home') mr-1" href="/">Kryefaqja</a>
@@ -71,16 +76,16 @@
 							<li class="nav-item">
                                 <a class="nav-link hvr-underline-from-left @yield('shporta') mr-1" href="/cart">Shporta</a>
                             </li>
-                            <li class="nav-item ">
-                                <a class="nav-link hvr-underline-from-left @yield('menaxhimi') mr-1" href="/menaxhimi">Menaxhimi</a>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link hvr-underline-from-left @yield('menaxhimi') mr-1 dropdown-toggle" data-toggle="dropdown" href="#">Menaxhimi<span class="caret"></span></a>
+                                <ul class="dropdown-menu bg-dark">
+                                    <li><a class="nav-link  hvr-underline-from-left @yield('llogaria') mr-1" href="/menaxhimi">Llogaria</a></li>
+                                    <li><a class="nav-link hvr-underline-from-left @yield('aksion') mr-1" href="/aksion">Aksionet</a></li>
+                                    <li><a class="nav-link hvr-underline-from-left @yield('picture') mr-1" href="/picture">Imazhet</a></li>
+                                    <li><a class="nav-link hvr-underline-from-left @yield('client') mr-1" href="/client">Klient</a></li>
+                                    <li><a class="nav-link hvr-underline-from-left @yield('klasifikimi') mr-1" href="/klasifikimi">Klasifikimet</a></li>
+                                </ul>
                             </li>
-							<li class="nav-item ">
-                                <a class="nav-link hvr-underline-from-left @yield('aksion') mr-1" href="/aksion">Aksionet</a>
-                            </li>
-							<li class="nav-item ">
-                                <a class="nav-link hvr-underline-from-left @yield('picture') mr-1" href="/picture">Imazhet</a>
-                            </li>
-            
                             @elseif(Auth::user()->admin == 2)
                             <li class="nav-item">
                                 <a class="nav-link hvr-underline-from-left @yield('home') mr-1" href="/">Kryefaqja</a>
@@ -95,7 +100,7 @@
                                 <a class="nav-link hvr-underline-from-left @yield('shporta') mr-1" href="/cart">Shporta</a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link hvr-underline-from-left @yield('menaxhimi') mr-1" href="/menaxhimi">Menaxhimi</a>
+                                <a class="nav-link hvr-underline-from-left @yield('llogaria') mr-1" href="/menaxhimi">Menaxhimi</a>
                             </li>
                             @else
                             <li class="nav-item">
@@ -111,11 +116,11 @@
                                 <a class="nav-link hvr-underline-from-left @yield('shporta') mr-1" href="/cart">Shporta</a>
                             </li>
                             <li class="nav-item ">
-                                <a class="nav-link hvr-underline-from-left @yield('menaxhimi') mr-1" href="/menaxhimi">Menaxhimi</a>
+                                <a class="nav-link hvr-underline-from-left @yield('llogaria') mr-1" href="/menaxhimi">Menaxhimi</a>
                             </li>
-                              
+
                             @endif
-                         
+
                     </ul>
                     @endguest
 
@@ -126,7 +131,7 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                             </li>
-                            
+
                         @else
 
                             <li class="nav-item mb-1 d-none d-lg-block">
@@ -142,20 +147,20 @@
                                         @csrf
                                     </form>
                                     </div>
-                              
+
                             </li>
                             <li class="nav-item d-none d-lg-block">
                                 <div class="container">
                                 <div class="row align-items-center">
                                     <div class="col-lg-2 table-responsivecol-md-1 col-sm-1 col-xs-1">
-                                        <a  href="/cart"><i id="cart" class="d-none d-xl-block 
+                                        <a  href="/cart"><i id="cart" class="d-none d-xl-block
                                             @if(App\Cart::getQuantity(auth()->user()->id) == 0)
-                                            
-                                            
+
+
                                              fa fa-shopping-cart
                                              @else fa fa-cart-arrow-down @endif " aria-hidden="true"></i></a>
                                     </div>
-                                    <div class="col-lg-7 col-md-2 col-sm-3 col-xs-3"> 
+                                    <div class="col-lg-7 col-md-2 col-sm-3 col-xs-3">
                                         <div class="row">
                                             <label for="sasia" class="col-md-4 col-form-label text-md-right">Sasia</label>
                                             <div class="col-md-8">
@@ -168,7 +173,7 @@
                                                 <input class="form-control d-block" type="text"  value="{{number_format(App\Cart::getTotalPrice(auth()->user()->id),2)}} €" name="value" id="value" readonly placeholder="Vlera" />
                                             </div>
                                         </div>
-                                    
+
                                    </div>
                                 </div>
                             </div>
@@ -190,8 +195,8 @@
                                    <p>Sasia: {{App\Cart::getQuantity(auth()->user()->id)}}</p>
                                    <p>Vlera: {{number_format(App\Cart::getTotalPrice(auth()->user()->id),2)}} €</p>
                             </li>
-                           
-                            
+
+
                         @endguest
                     </ul>
                 </div>
@@ -210,7 +215,7 @@
 		            {{session('success')}}
 	            </div>
             @endif
-               
+
             @if ($errors->any())
             <div class="alert w-50 alert-danger mx-auto">
                 <ul>

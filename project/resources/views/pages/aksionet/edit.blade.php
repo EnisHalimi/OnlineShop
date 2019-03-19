@@ -1,5 +1,6 @@
 @extends('layouts.app')
 @section('aksion','active')
+@section('menaxhimi','active')
 
 @if(@auth)
 @section('content')
@@ -24,13 +25,13 @@
                                 <div class="col-md-6">
                                    <select readonly class="form-control" id="pID" name="pID">
                                     <option value="{{$products->ID}}">{{$products->Emertimi}} - ({{$products->Barcode}})</option>
-                                      
+
                                    </select>
                                 </div>
                         </div>
                         <div class="form-group row">
                             <label for="qmimorja" class="col-md-4 col-form-label text-md-right">{{ __('Qmimorja') }}</label>
-                            <div class="col-md-6">             
+                            <div class="col-md-6">
                                 <select class="form-control" id="qmimorja" name="qmimorja">
                                     <option @if($aksion->qmimorja == "R") selected @endif>R</option>
                                     <option  @if($aksion->qmimorja == "R1") selected @endif>R1</option>
@@ -40,11 +41,11 @@
                         <div class="form-group row">
                         <label for="rabati" class="col-md-4 col-form-label text-md-right">{{ __('Rabati') }}</label>
                             <div class="col-md-6">
-                                <input class="form-control" type="range"  oninput="rabati.value = a.value / 100; text.innerHTML = a.value+' %'" id="a" name="a" value="{{$aksion->rabati*100}}"> <label class="col-form-label" for="a" id="text" name="r-text">{{$aksion->rabati*100}} % </label>  
+                                <input class="form-control" type="range"  oninput="rabati.value = a.value / 100; text.innerHTML = a.value+' %'" id="a" name="a" value="{{$aksion->rabati*100}}"> <label class="col-form-label" for="a" id="text" name="r-text">{{$aksion->rabati*100}} % </label>
                             <input  class="form-control" readonly  hidden name="rabati" id="rabati" value="{{$aksion->rabati}}">
                             </div>
                         </div>
-                        <input name="_method" type="hidden" value="PUT"> 
+                        <input name="_method" type="hidden" value="PUT">
                         <div class="form-group row mb-0">
                                 <div class="col-md-6 offset-md-4">
                                         <button type="button" class="btn btn-success" data-toggle="modal" data-target="#regjistroModal">
@@ -64,12 +65,12 @@
                                                         </div>
                                                         <div class="modal-footer">
                                                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Jo</button>
-                                                            <button type="submit" class="btn btn-success"><i class="fa fa-pencil"></i> Ndrysho</button>                                      
+                                                            <button type="submit" class="btn btn-success"><i class="fa fa-pencil"></i> Ndrysho</button>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                    
+
                                 </div>
                             </div>
                     </form>

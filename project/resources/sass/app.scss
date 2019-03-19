@@ -18,7 +18,71 @@
 .navbar-laravel {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
   color: #fff;
-} 
+}
+#mapid {
+  height: 100vh;
+  width: 95vw;
+
+  .info {
+    padding: 6px 8px;
+    font: 14px/16px Arial, Helvetica, sans-serif;
+    background: white;
+    background: rgba(255,255,255,0.8);
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    border-radius: 5px;
+    }
+
+    .info h4 {
+    margin: 0 0 5px;
+    color: #777;
+    }
+
+    .legend {
+    line-height: 18px;
+    color: #555;
+    }
+    .legend i {
+    width: 18px;
+    height: 18px;
+    float: left;
+    margin-right: 8px;
+    opacity: 0.7;
+    }
+}
+
+#map-small {
+    height: 56vh;
+    width: 97vw;
+
+    .info {
+      padding: 6px 8px;
+      font: 14px/16px Arial, Helvetica, sans-serif;
+      background: white;
+      background: rgba(255,255,255,0.8);
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+      border-radius: 5px;
+      }
+
+      .info h4 {
+      margin: 0 0 5px;
+      color: #777;
+      }
+
+      .legend {
+      line-height: 18px;
+      color: #555;
+      }
+      .legend i {
+      width: 18px;
+      height: 18px;
+      float: left;
+      margin-right: 8px;
+      opacity: 0.7;
+      }
+  }
+
+
+
 
 #cart
 {
@@ -43,13 +107,13 @@
 
 .list-group-item
 {
-  border: 1px solid #aaa !important; 
-  color: #000; 
-  
+  border: 1px solid #aaa !important;
+  color: #000;
+
 }
 
-@include media-breakpoint-only(xs) 
-{  
+@include media-breakpoint-only(xs)
+{
   body
   {
       font-size: 1em !important;
@@ -60,14 +124,14 @@
     display: none !important;
   }
   .active
-  { 
+  {
     border-right:3px dotted #fff;
   }
 
   #search-container
   {
     padding: 10%;
-  } 
+  }
   #card-label
   {
     position:absolute;
@@ -78,18 +142,18 @@
   {
     margin-left: -4.3vw;
     width: 18vw;
-  } 
+  }
 
   #products #sasia
-  {  
+  {
   width: 10.2vw !important;
   }
   #card-view #sasia
-  {  
+  {
   width: 11vw !important;
   }
-  #table #sasia  
-  {  
+  #table #sasia
+  {
   width: 11vw  !important;
   }
   #value
@@ -101,8 +165,8 @@
     width: 17vw !important;
   }
 }
-@include media-breakpoint-only(sm) 
-{ 
+@include media-breakpoint-only(sm)
+{
   #specifika
   {
     display: none !important;
@@ -110,7 +174,7 @@
   #search-container
   {
     padding: 10%;
-  } 
+  }
   .active
   {
     border-right:3px dotted #fff;
@@ -122,19 +186,19 @@
     width: 20vw;
   }
   #products #sasia
-  {  
+  {
   width: 8vw !important;
   }
   #card-view #sasia
-  {  
+  {
   width: 8vw !important;
   }
-  #products #sasia-field  
-  {  
+  #products #sasia-field
+  {
   width: 25vw  !important;
   }
-  #table #sasia-field  
-  {  
+  #table #sasia-field
+  {
     width: 13vw  !important;
   }
   #value
@@ -149,10 +213,10 @@
   {
     margin-left: -4vw;
     width: 14vw;
-  } 
+  }
 }
 @include media-breakpoint-only(md)
-{  
+{
   #specifika
   {
     display: none !important;
@@ -168,19 +232,19 @@
     width: 12vw;
   }
   #products #sasia
-  {  
+  {
   width: 6.2vw !important;
   }
   #card-view #sasia
-  {  
+  {
   width: 6.2vw !important;
   }
-  #products #sasia-field  
-  {  
+  #products #sasia-field
+  {
   width: 19vw  !important;
   }
-  #table #sasia-field  
-  {  
+  #table #sasia-field
+  {
   width: 11vw  !important;
   }
   #value
@@ -195,14 +259,14 @@
   {
     margin-left: -2.3vw;
     width: 9vw;
-  } 
+  }
 }
-@include media-breakpoint-only(lg) 
+@include media-breakpoint-only(lg)
 {
   .active
   {
     border-bottom:3px dotted #fff;
-  } 
+  }
 
   #card-label
   {
@@ -211,19 +275,19 @@
     width: 11vw;
   }
   #products #sasia
-  {  
+  {
   width: 5vw !important;
   }
   #card-view #sasia
-  {  
+  {
   width: 5vw !important;
   }
-  #products #sasia-field  
-  {  
+  #products #sasia-field
+  {
   width: 15vw  !important;
   }
-  #table #sasia-field  
-  {  
+  #table #sasia-field
+  {
   width: 7vw  !important;
   }
   #value
@@ -240,12 +304,12 @@
     width: 7vw;
   }
 }
-@include media-breakpoint-only(xl) 
-{ 
+@include media-breakpoint-only(xl)
+{
   .active
   {
     border-bottom:3px dotted #fff;
-  } 
+  }
   #card-label
   {
     position:absolute;
@@ -253,19 +317,19 @@
     width: 10vw;
   }
   #products #sasia
-  {  
+  {
   width: 4vw !important;
   }
   #card-view #sasia
-  {  
+  {
   width: 4vw !important;
   }
-  #products #sasia-field  
-  {  
+  #products #sasia-field
+  {
   width: 12vw  !important;
   }
-  #table #sasia-field  
-  {  
+  #table #sasia-field
+  {
   width: 6vw  !important;
   }
   #table-label

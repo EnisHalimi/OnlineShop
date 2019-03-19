@@ -7,6 +7,7 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use App\User;
 use App\Order;
+use DB;
 
 class User extends Authenticatable
 {
@@ -29,6 +30,15 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token','admin','status'
     ];
+
+    public static function getUserName($id)
+    {
+         $users = User::find($id);
+            if($users !== null)
+                return "Eshte gjetur";
+            else 
+                return "Nuk eshte gjetur";
+    }   
 
     public function order()
     {

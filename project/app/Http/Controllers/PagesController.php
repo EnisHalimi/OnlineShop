@@ -73,7 +73,6 @@ class PagesController extends Controller
             return view('picture');
     }
 
-
     public function menaxhimi()
     {
         if( auth()->guest())

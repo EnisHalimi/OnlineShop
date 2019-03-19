@@ -1,19 +1,19 @@
 @extends('layouts.app')
 @section('aksion','active')
-
+@section('menaxhimi','active')
 @if(@auth)
 @section('content')
 <div class="container">
 <div class="d-flex float-left">
         <h3 class="float-left"> Menaxho Aksionet</h3>
-        
+
     </div>
     <div class="d-flex justify-content-end">
        @if(auth()->user()->admin == 1)
        <a href="/aksion/create" class="btn btn-primary"><i class="fa fa-plus"></i> Shto Produkte </a>
        @else
        @endif
-    </div> 
+    </div>
     <hr>
 <table id="table" class="table table-hover  table-bordered">
     <thead class="bg-dark text-light">
@@ -42,35 +42,35 @@
                     I rekomanduar
 
                 @endif
-                </td> 
-                
-                <td>{{App\Product::getName($aks->productID)}}</td>                 
-                <td>{{App\Product::getProductPrice($aks->productID, auth()->user()->qmimorja)}}</td>  
+                </td>
+
+                <td>{{App\Product::getName($aks->productID)}}</td>
+                <td>{{App\Product::getProductPrice($aks->productID, auth()->user()->qmimorja)}}</td>
                 <td>
                 @if($aks->tipi == 1)
                     {{App\Product::getPriceWithDiscount($aks->productID, auth()->user()->qmimorja,$aks->rabati)}}
-                
+
                 @else
                 -
                 @endif
-                </td>   
+                </td>
                 <td>
                     @if($aks->tipi == 1)
                         {{($aks->rabati*100) }} %
-                    
+
                     @else
                     -
                     @endif
-                    </td>     
+                    </td>
                     <td>{{$aks->qmimorja}}</td>
                 <td>
-                        
-                    
+
+
                         <a href="/aksion/{{$aks->id}}/edit" class="btn btn-primary"><i class="fa fa-pencil"></i> Ndrysho </a>
                         <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#fshijModal{{$aks->id}}">
                                 <i class="fa fa-trash"></i> Fshij
                               </button>
-                              
+
 
                               <div class="modal fade" id="fshijModal{{$aks->id}}" tabindex="-1" role="dialog" aria-labelledby="fshijModalLabel{{$aks->id}}" aria-hidden="true">
                                 <div class="modal-dialog" role="document">
@@ -95,22 +95,22 @@
                                   </div>
                                 </div>
                               </div>
-                    
-                </td>                 
+
+                </td>
                 </tr>
             @endforeach
            @else
             <tr>
                     <td colspan="8">Nuk u gjetën aksione</td>
-                    
+
             </tr>
            @endif
-        
+
     </tbody>
 </table>
 {{ $aksion->appends(request()->query())->links() }}
 </div>
-       
+
 @endsection
 @else
 

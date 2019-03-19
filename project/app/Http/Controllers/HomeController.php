@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Order;
 use App\Product;
 use App\User;
+use App\Location;
 use Illuminate\Http\Request;
 use Mail;
 use DB;
@@ -95,5 +96,16 @@ class HomeController extends Controller
 			$add = DB::table('photo')->insert(['ArtikulliID' =>  $product->ID, 'Photo' => $fileNametoStore]);
 
         return redirect('/picture')->with('success','U shtua fotografia');
-	}
+    }
+
+    public function  addMapData(Request $request)
+    {
+        $locdata = str_replace("LatLng","", $request->input('data'));
+        $location = new Location;
+        $location->location_data = DB::raw('POINT' .$locdata.'');
+        $location->ClientID = 1;
+        $location->save();
+        return redirect('/client')->with('success','U shtua Klienti');           
+    }
+  
 }

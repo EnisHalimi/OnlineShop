@@ -1,5 +1,7 @@
 @extends('layouts.app')
 @section('picture','active')
+@section('menaxhimi','active')
+
 
 @if(@auth)
 @section('content')
@@ -13,29 +15,29 @@
                        <div class="form-group row">
                             <label for="rabati" class="col-md-4 col-form-label text-md-right">{{ __('Produkti') }}</label>
                                 <div class="col-md-6">
-                                        
+
                                     <input class="form-control" autocomplete="off" required type="text" id="aksionPID" name="aksionPID" value="" placeholder="Kërko Produktin">
-                        
+
                                 </div>
                         </div>
 							<div class="form-group row">
-							  
-							 
+
+
 								<label class="col-md-4 col-form-label text-md-right" for="cover_image">Foto</label>
 								 <div class="col-md-6">
-                                        
+
 										 <div class="custom-file">
 										 <label class="custom-file-label" id="file-label" for="inputGroupFile01">Zgjidh foton</label>
 										  <input type="file" class="custom-file-input" onchange="res =  cover_image.value.split('\\');
   document.getElementById('file-label').innerHTML = ''+res[2];" id="cover_image" name="cover_image" aria-describedby="inputGroupFileAddon01">
-											
+
   </div>
-                              
+
                                 </div>
-								
-								
-								
-		
+
+
+
+
 							</div>
 
                         <div class="form-group row mb-0">
@@ -57,12 +59,12 @@
                                                         </div>
                                                         <div class="modal-footer">
                                                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Jo</button>
-                                                            <button type="submit" class="btn btn-success"><i class="fa fa-plus"></i> Regjistro</button>                                      
+                                                            <button type="submit" class="btn btn-success"><i class="fa fa-plus"></i> Regjistro</button>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                    
+
                                 </div>
                             </div>
                     </form>

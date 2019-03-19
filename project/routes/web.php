@@ -21,6 +21,8 @@ Route::get('customSearch', 'ProductsController@customSeachProduct');
 Route::post('insertIntoCart', 'ProductsController@addCart');
 Route::get('/midland', 'PagesController@midland');
 Route::post('addPicture', 'HomeController@addPicture');
+Route::get('addMaps', 'HomeController@addMapData');
+Route::get('/form', 'PagesController@form');
 Route::get('/picture', 'PagesController@pictures');
 Route::get('/menaxhimi', 'PagesController@menaxhimi');
 Auth::routes(['register' => false]);
@@ -30,4 +32,5 @@ Route::resource('order', 'OrdersController');
 Route::resource('user', 'UsersController');
 Route::resource('cart', 'CartsController');
 Route::resource('aksion', 'AksionetController');
-
+Route::resource('client', 'ClientController');
+Route::resource('klasifikimi', 'KlasifikimiController');

@@ -1,5 +1,6 @@
 @extends('layouts.app')
 @section('aksion','active')
+@section('menaxhimi','active')
 
 @if(@auth)
 @section('content')
@@ -22,15 +23,15 @@
                        <div class="form-group row">
                             <label for="rabati" class="col-md-4 col-form-label text-md-right">{{ __('Produkti') }}</label>
                                 <div class="col-md-6">
-                                        
+
                                     <input class="form-control" autocomplete="off" required type="text" id="aksionPID" name="aksionPID" value="" placeholder="Kërko Produktin">
-                        
+
                                 </div>
                         </div>
                         <div class="form-group row">
                             <label for="qmimorja" class="col-md-4 col-form-label text-md-right">{{ __('Qmimorja') }}</label>
                                     <div class="col-md-6">
-                                        
+
                                         <select class="form-control" id="qmimorja" name="qmimorja">
                                                 <option>R</option>
                                                 <option>R1</option>
@@ -41,7 +42,7 @@
                         <label for="a" class="col-md-4 col-form-label text-md-right">{{ __('Rabati') }}</label>
                                 <div class="col-md-6">
                                    <input class="form-control" type="range" oninput="rabati.value = a.value / 100; text.innerHTML = a.value+' %'" id="a" name="a" value="0"> <label class="col-form-label" for="a" id="text" name="r-text"> </label>
-                                  
+
                                    <input  class="form-control" readonly  hidden name="rabati" value="0" id="rabati">
                             </div>
                         </div>
@@ -64,12 +65,12 @@
                                                         </div>
                                                         <div class="modal-footer">
                                                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Jo</button>
-                                                            <button type="submit" class="btn btn-success"><i class="fa fa-plus"></i> Regjistro</button>                                      
+                                                            <button type="submit" class="btn btn-success"><i class="fa fa-plus"></i> Regjistro</button>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                    
+
                                 </div>
                             </div>
                     </form>

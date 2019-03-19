@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@section('llogaria','active')
 @section('menaxhimi','active')
 
 @if(@auth)
@@ -7,14 +8,14 @@
 <div class="container">
     <div class="d-flex float-left">
         <h3 class="float-left"> Të dhënat tuaja</h3>
-        
+
     </div>
     <div class="d-flex justify-content-end">
        @if(auth()->user()->admin == 1)
        <a href="/aksion" class="btn btn-primary"><i class="fa fa-tags"></i> Aksionet </a>
        @else
        @endif
-    </div> 
+    </div>
     <hr>
         <table class="table table-striped ">
             <tbody>
@@ -42,8 +43,8 @@
         </table>
 
         <a href="/user/{{$user->id}}/edit" class="btn btn-primary"><i class="fa fa-pencil"></i> Ndrysho </a>
-        
-       
+
+
 @endsection
 @else
 
